@@ -1,0 +1,12 @@
+def solution(n):
+    data = dict()
+    for i in range(len(n)):
+        if(n[i][1] in data):
+            data[n[i][1]] += 1
+        else: data[n[i][1]] = 1
+    if(len(data) == 1): return len(n)
+    else: 
+        num = 1
+        for i in data.values():
+            num *= (i+1)
+        return num-1
